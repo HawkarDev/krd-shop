@@ -2,7 +2,7 @@
 
 import { getAllProducts } from "@/request/request";
 import { Product } from "@/typing";
-import { log } from "console";
+
 import { Loader } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import ProductCart from "./ProductCart";
