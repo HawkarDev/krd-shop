@@ -18,3 +18,21 @@ export async function getAllProducts() {
     return productsRes.json()
     
 }
+
+export async function getSingleProduct(id: string) {
+    const singleProductsRes = await fetch(`https://fakestoreapi.com/products/${id}`)
+ 
+
+
+    return singleProductsRes.json()
+    
+}
+
+export async function getProductByCategory(category:string) {
+    const productByCateforyRes = await fetch(`https://fakestoreapi.com/products/category/${category}`)
+ 
+
+
+    return productByCateforyRes.json()
+    
+}
