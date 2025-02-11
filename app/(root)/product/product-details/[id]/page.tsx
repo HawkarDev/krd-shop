@@ -15,7 +15,6 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
   );
   const num = Math.round(singleProduct?.rating?.rate);
   const starArray = new Array(num).fill(0);
-  console.log(singleProduct);
 
   return (
     <div className="mt-20 mb-20">
@@ -78,7 +77,7 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
             SKU: {Math.random() * 500}
           </p>
           {/* Addto cart */}
-          <AddToCart />
+          <AddToCart product={singleProduct} />
         </div>
       </div>
       {/* Related Product */}

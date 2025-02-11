@@ -27,7 +27,7 @@ const ShoppingCartButton = () => {
       </SheetTrigger>
       <SheetContent className="overflow-auto h-full">
         <SheetTitle>You Product</SheetTitle>
-        {/* caerSidebar */}
+        {/* cartSidebar */}
         <CartSideBar items={items} />
       </SheetContent>
     </Sheet>

@@ -82,9 +82,10 @@ const CartSideBar = ({ items }: Props) => {
             );
           })}
           <Link href="/cart">
-            <Button className="w-full mb-6 mt-6">View all Carts</Button>
+            <SheetClose>
+              <Button className="w-full mb-6 mt-6">View all Carts</Button>
+            </SheetClose>
           </Link>
-          <SheetClose />
         </div>
       )}
     </div>

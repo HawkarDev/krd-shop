@@ -1,3 +1,5 @@
+"use client";
+
 import { Product } from "@/typing";
 import { HeartIcon, ShoppingBag, StarsIcon } from "lucide-react";
 import Image from "next/image";
@@ -5,7 +7,7 @@ import Link from "next/link";
 
 import React from "react";
 import { Button } from "../ui/button";
-import { shallowEqual, useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addItem } from "@/store/cartSlice";
 import { useToast } from "@/hooks/use-toast";
 
@@ -18,12 +20,11 @@ const ProductCart = ({ product }: Props) => {
   const ratingArray = new Array(num).fill(0);
 
   const { toast } = useToast();
-  useToast;
 
   const dispatch = useDispatch();
   const AddToCartHandler = (product: Product) => {
     toast({
-      description: "Cart Added",
+      description: "Item Added To  Cart",
       variant: "success",
     });
     dispatch(addItem(product));
