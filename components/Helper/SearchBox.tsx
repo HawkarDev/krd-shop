@@ -65,7 +65,7 @@ const SearchBox = () => {
     const searchQuery = formData.get("search") as string; // Get the search input value
     console.log("Search Query:", name); // Replace with your search logic
     if (searchQuery.trim()) {
-      router.push(`/?search=${encodeURIComponent(searchQuery)}`);
+      router.push(`/all-products?search=${encodeURIComponent(searchQuery)}`);
     }
   };
 
