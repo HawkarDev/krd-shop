@@ -82,7 +82,7 @@ const CartSideBar = ({ items }: Props) => {
             );
           })}
           <Link href="/cart">
-            <SheetClose>
+            <SheetClose asChild>
               <Button className="w-full mb-6 mt-6">View all Carts</Button>
             </SheetClose>
           </Link>

@@ -6,11 +6,16 @@ import { Product } from "@/typing";
 import { Loader } from "lucide-react";
 import React, { useEffect, useState } from "react";
 import ProductCart from "./ProductCart";
+import { useSearchParams } from "next/navigation";
 
 const AllProducts = () => {
   const [products, setProducts] = useState<Product[] | null>(null);
   const [loading, setLoading] = useState(true);
-
+  const [filteredProducts, setFilteredProducts] = useState<Product[] | null>(
+    null
+  );
+  const searchParams = useSearchParams();
+  const searchQuery = searchParams.get("search")?.toLowerCase() || "";
   useEffect(() => {
     const getData = async () => {
       setLoading(true);
@@ -26,6 +31,15 @@ const AllProducts = () => {
     getData();
   }, []);
 
+  useEffect(() => {
+    if (products) {
+      const filtered = products.filter((product) =>
+        product.title.toLowerCase().includes(searchQuery)
+      );
+      setFilteredProducts(filtered);
+    }
+  }, [searchQuery, products]);
+
   return (
     <div className="pt-6 pb-12">
       <h1 className="text-2xl font-bold text-center capitalize">
@@ -37,9 +51,15 @@ const AllProducts = () => {
         </div>
       ) : (
         <div className="w-3/4 mx-auto mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
-          {products?.map((product) => {
-            return <ProductCart key={product.id} product={product} />;
-          })}{" "}
+          {filteredProducts?.length ? (
+            filteredProducts.map((product) => (
+              <ProductCart key={product.id} product={product} />
+            ))
+          ) : (
+            <p className="text-center col-span-full text-gray-500">
+              No products found.
+            </p>
+          )}
         </div>
       )}
     </div>

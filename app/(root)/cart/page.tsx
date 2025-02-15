@@ -56,7 +56,10 @@ const Cart = () => {
             </h1>
             {items.map((item) => {
               return (
-                <div className=" flex pb-6 mt-2 p-5 border-b-[1.5px] border-opacity-25 border-gray-700 items-center space-x-10">
+                <div
+                  key={item.id}
+                  className=" flex pb-6 mt-2 p-5 border-b-[1.5px] border-opacity-25 border-gray-700 items-center space-x-10"
+                >
                   <div>
                     <Image
                       src={item.image}
