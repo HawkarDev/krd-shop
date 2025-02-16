@@ -83,7 +83,7 @@ const ProductDetails = async ({ params }: { params: { id: string } }) => {
       {/* Related Product */}
       <div className="w-4/5 mt-16 mx-auto">
         <h1 className="text-2xl text-black font-semibold">Related Product</h1>
-        <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
+        <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
           {relatedProduct.map((product) => {
             return <ProductCart key={product.id} product={product} />;
           })}

@@ -33,7 +33,7 @@ const ProductCart = ({ product }: Props) => {
   return (
     <div className="p-4">
       {/* image */}
-      <div className="w-[200px] h-[150px] ">
+      <div className="w-[150] h-[200px] ">
         <Image
           src={product.image}
           alt={product.title}
